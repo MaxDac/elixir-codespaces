@@ -13,15 +13,16 @@ RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
   npm i -g npm
 
 # Installing Zig dependencies
-RUN wget https://ziglang.org/download/0.12.0/zig-linux-x86_64-0.12.0.tar.xz && \
-  tar -xf zig-linux-x86_64-0.12.0.tar.xz && \
-  mv zig-linux-x86_64-0.12.0 /usr/local/lib/ && \
-  ln -s /usr/local/lib/zig-linux-x86_64-0.12.0/zig /usr/local/bin/zig && \
-  wget https://github.com/zigtools/zls/releases/download/0.12.0/zls-x86_64-linux.tar.gz && \
-  mkdir zls && \
-  tar -xzf zls-x86_64-linux.tar.gz -C ./zls && \
-  mv zls /usr/local/lib/ && \
-  chmod +x /usr/local/lib/zls/bin/zls && \
-  ln -s /usr/local/lib/zls/bin/zls /usr/local/bin/zls && \
-  rm -rf zig-linux-x86_64-0.12.0.tar.xz zls-x86_64-linux.tar.gz
+RUN wget https://ziglang.org/download/0.13.0/zig-linux-x86_64-0.13.0.tar.xz && \
+  tar -xf zig-linux-x86_64-0.13.0.tar.xz && \
+  mv zig-linux-x86_64-0.13.0 /usr/local/lib/ && \
+  ln -s /usr/local/lib/zig-linux-x86_64-0.13.0/zig /usr/local/bin/zig && \
+  rm -rf zig-linux-x86_64-0.13.0.tar.xz
 
+RUN wget https://github.com/zigtools/zls/releases/download/0.13.0/zls-x86_64-linux.tar.xz && \
+  mkdir zls && \
+  tar -xf zls-x86_64-linux.tar.xz -C ./zls && \
+  mv zls /usr/local/lib/ && \
+  chmod +x /usr/local/lib/zls/zls && \
+  ln -s /usr/local/lib/zls/zls /usr/local/bin/zls && \
+  rm -rf zls-x86_64-linux.tar.gz
