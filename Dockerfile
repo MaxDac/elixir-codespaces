@@ -1,4 +1,4 @@
-FROM hexpm/elixir:1.17.3-erlang-27.1.1-debian-bookworm-20240926-slim AS elixir-build
+FROM hexpm/elixir:1.17.3-erlang-27.1.2-debian-bookworm-20241111-slim AS elixir-build
 
 ENV ERL_HOME="/usr/local/lib/erlang/erts-14.2.2"
 
