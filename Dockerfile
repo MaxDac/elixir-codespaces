@@ -1,6 +1,6 @@
 FROM hexpm/elixir:1.17.3-erlang-27.1.2-debian-bookworm-20241111-slim AS elixir-build
 
-ENV ERL_HOME="/usr/local/lib/erlang/erts-14.2.2"
+ENV ERL_HOME="/usr/local/lib/erlang/erts-15.1.2"
 
 RUN apt-get update && apt-get install -y git postgresql-client inotify-tools \
   curl wget gnupg2 dirmngr gpg gawk xz-utils
@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y git postgresql-client inotify-tools \
 WORKDIR /tmp
 
 # Installing Node
-RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
+RUN curl -fsSL https://deb.nodesource.com/setup_22.x | bash - && \
   apt-get install -y nodejs && \
   npm i -g npm
 
